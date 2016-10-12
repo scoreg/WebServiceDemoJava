@@ -18,6 +18,10 @@ Starting with Release 17.02 all REST Services will require authentication via HT
 The MemberService is located at `member`
 #### Method findMemberCompleteByScoutId
 up to 16.11: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberCompleteByScoutId/<username>/<password>/<organizationId>/<webserviceId>/<scoutId>`
+
 after 17.02: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberCompleteByScoutId/<scoutId>`
 
+#### Method findMemberByScoutId
+up to 16.11: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberByScoutId/<username>/<password>/<organizationId>/<webserviceId>/<scoutId>`
 
+after 17.02: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberByScoutId/<scoutId>`
