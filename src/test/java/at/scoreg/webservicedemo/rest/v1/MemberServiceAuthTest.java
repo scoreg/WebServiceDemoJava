@@ -13,7 +13,7 @@ public class MemberServiceAuthTest extends RestServiceAuthTest {
 	@Test
 	public void testFindScoutIdsForOrganization() {
 		
-		String url = getUrl("member", "findScoutIdsForOrganization");
+		String url = getUrl("memberV2", "findScoutIdsForOrganization");
 		
 		RestTemplate restTemplate = new RestTemplate();
 		WSScoutIdList scoutIds = restTemplate.exchange(url, HttpMethod.GET,
@@ -26,7 +26,7 @@ public class MemberServiceAuthTest extends RestServiceAuthTest {
 	public void testFindMemberByScoutId() {
 		
 		String requestedScoutId = "4-GA-000126";
-		String url = getUrl("member", "findMemberByScoutId", requestedScoutId);
+		String url = getUrl("memberV2", "findMemberByScoutId", requestedScoutId);
 		
 		RestTemplate restTemplate = new RestTemplate();
 		WSMemberComplete memberComplete = restTemplate.exchange(url, HttpMethod.GET,
@@ -39,7 +39,7 @@ public class MemberServiceAuthTest extends RestServiceAuthTest {
 	public void testFindMemberCompleteByScoutId() {
 		
 		String requestedScoutId = "4-GA-000126";
-		String url = getUrl("member", "findMemberCompleteByScoutId", requestedScoutId);
+		String url = getUrl("memberV2", "findMemberCompleteByScoutId", requestedScoutId);
 		
 		RestTemplate restTemplate = new RestTemplate();
 		WSMemberComplete memberComplete = restTemplate.exchange(url, HttpMethod.GET,

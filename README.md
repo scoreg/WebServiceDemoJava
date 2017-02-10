@@ -13,6 +13,7 @@ The base URL for REST services is `ScoregWebServer/services/v1/`
 *Authentication*
 Currently the authentication credentials are passed as path parameters within the request. The current WebService URL is built up with the pattern `<host>/ScoregWebServer/services/v1/<service>/<method>/<username>/<password>/<organizationId>/<webserviceId>/<parameter>`
 Starting with Release 17.03 all REST Services will require authentication via HTTP Basic Auth and passing the Access Key (new and different to the current webServiceId) as HTTP Header accessKey.
+For compatibility reasons the current behavior will remain for a while.
 
 See `RestServiceTest` and `RestServiceAuthTest` for details on building the request URL and creating authentication HTTP headers. 
 
@@ -22,9 +23,9 @@ See `MemberServiceTest` for example with current authentication and `MemberServi
 #### Method findMemberCompleteByScoutId
 up to 16.11: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberCompleteByScoutId/<username>/<password>/<organizationId>/<webserviceId>/<scoutId>`
 
-after 17.03: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberCompleteByScoutId/<scoutId>`
+after 17.03: `https://www.scoreg.at/ScoregWebServer/services/v1/memberV2/findMemberCompleteByScoutId/<scoutId>`
 
 #### Method findMemberByScoutId
 up to 16.11: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberByScoutId/<username>/<password>/<organizationId>/<webserviceId>/<scoutId>`
 
-after 17.03: `https://www.scoreg.at/ScoregWebServer/services/v1/member/findMemberByScoutId/<scoutId>`
+after 17.03: `https://www.scoreg.at/ScoregWebServer/services/v1/memberV2/findMemberByScoutId/<scoutId>`
