@@ -47,4 +47,21 @@ public class MemberServiceAuthTest extends RestServiceAuthTest {
 		
 		System.out.println(memberComplete.getFirstname() + " " + memberComplete.getLastname());
 	}
+	
+	@Test
+	public void testFindScoutIdsAndMemberForOrganization() {
+		String url = getUrl("memberV2", "findScoutIdsForOrganization");
+		
+		RestTemplate restTemplate = new RestTemplate();
+		WSScoutIdList scoutIds = restTemplate.exchange(url, HttpMethod.GET,
+				new HttpEntity<Void>(createHeaders()), WSScoutIdList.class).getBody();
+		
+		for (String requestedScoutId : scoutIds.getList()) {
+			url = getUrl("memberV2", "findMemberCompleteByScoutId", requestedScoutId);
+			WSMemberComplete memberComplete = restTemplate.exchange(url, HttpMethod.GET,
+				new HttpEntity<Void>(createHeaders()), WSMemberComplete.class).getBody();
+			
+			System.out.println(memberComplete.getFirstname() + " " + memberComplete.getLastname());
+		}
+	}
 }
